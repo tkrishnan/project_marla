@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ppatStep.h"
 
-@interface ppatAddStepViewController : UIViewController
+@interface ppatAddStepViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
     @property ppatStep *thisStep;
 @end

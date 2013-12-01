@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ppatToDoListViewController : UITableViewController
+@interface ppatToDoListViewController : UITableViewController <UIAlertViewDelegate>
+    @property(nonatomic, readonly) NSInteger numberOfButtons;
+    @property(nonatomic, copy) NSString *message;
+    @property(nonatomic, copy) NSString *title;
 
 @end
+

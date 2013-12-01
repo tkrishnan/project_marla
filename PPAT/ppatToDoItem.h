@@ -11,6 +11,7 @@
 @interface ppatToDoItem : NSObject
 
 @property NSString *itemName;
+@property NSMutableArray *stepsList;
 @property BOOL completed;
 @property (readonly) NSDate *creationDate;
 

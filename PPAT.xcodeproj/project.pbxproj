@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		72661BDC184AE82B00CE1AA7 /* ppatAddStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */; };
 		72661BDF184AEDAE00CE1AA7 /* ppatStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 72661BDE184AEDAE00CE1AA7 /* ppatStep.m */; };
+		72902D4E184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72902D4D184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m */; };
+		72902D51184BE2FC00EF58B4 /* ppatViewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72902D50184BE2FC00EF58B4 /* ppatViewTaskViewController.m */; };
 		72B68C961831295500F6C0C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B68C951831295500F6C0C4 /* Foundation.framework */; };
 		72B68C981831295500F6C0C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B68C971831295500F6C0C4 /* CoreGraphics.framework */; };
 		72B68C9A1831295500F6C0C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B68C991831295500F6C0C4 /* UIKit.framework */; };
@@ -26,6 +28,7 @@
 		72B68CCB1842AF8C00F6C0C4 /* ppatToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CCA1842AF8C00F6C0C4 /* ppatToDoListViewController.m */; };
 		72B68CCE1842B8BB00F6C0C4 /* ppatToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CCD1842B8BB00F6C0C4 /* ppatToDoItem.m */; };
 		72CC93FB184B0F780055F3F7 /* Copy in Resources */ = {isa = PBXBuildFile; fileRef = 72CC93FA184B0F780055F3F7 /* Copy */; };
+		72CC93FE184B18750055F3F7 /* ppatOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CC93FD184B18750055F3F7 /* ppatOptionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,10 @@
 		72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ppatAddStepViewController.m; path = PPAT/ppatAddStepViewController.m; sourceTree = "<group>"; };
 		72661BDD184AEDAE00CE1AA7 /* ppatStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatStep.h; sourceTree = "<group>"; };
 		72661BDE184AEDAE00CE1AA7 /* ppatStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatStep.m; sourceTree = "<group>"; };
+		72902D4C184BE2E400EF58B4 /* ppatStepThroughTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatStepThroughTaskViewController.h; sourceTree = "<group>"; };
+		72902D4D184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatStepThroughTaskViewController.m; sourceTree = "<group>"; };
+		72902D4F184BE2FC00EF58B4 /* ppatViewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatViewTaskViewController.h; sourceTree = "<group>"; };
+		72902D50184BE2FC00EF58B4 /* ppatViewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatViewTaskViewController.m; sourceTree = "<group>"; };
 		72B68C921831295500F6C0C4 /* PPAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B68C951831295500F6C0C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		72B68C971831295500F6C0C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,6 +74,8 @@
 		72B68CCC1842B8BB00F6C0C4 /* ppatToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatToDoItem.h; sourceTree = "<group>"; };
 		72B68CCD1842B8BB00F6C0C4 /* ppatToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatToDoItem.m; sourceTree = "<group>"; };
 		72CC93FA184B0F780055F3F7 /* Copy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Copy; path = ../../../Copy; sourceTree = "<group>"; };
+		72CC93FC184B18750055F3F7 /* ppatOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ppatOptionViewController.h; path = PPAT/ppatOptionViewController.h; sourceTree = "<group>"; };
+		72CC93FD184B18750055F3F7 /* ppatOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ppatOptionViewController.m; path = PPAT/ppatOptionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */,
+				72CC93FD184B18750055F3F7 /* ppatOptionViewController.m */,
+				72902D4C184BE2E400EF58B4 /* ppatStepThroughTaskViewController.h */,
+				72902D4D184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m */,
+				72902D4F184BE2FC00EF58B4 /* ppatViewTaskViewController.h */,
+				72902D50184BE2FC00EF58B4 /* ppatViewTaskViewController.m */,
 				72661BDA184AE82B00CE1AA7 /* ppatAddStepViewController.h */,
 				72B68CC61842AD0700F6C0C4 /* ppatAddToDoItemViewController.h */,
+				72CC93FC184B18750055F3F7 /* ppatOptionViewController.h */,
 				72B68CC71842AD0700F6C0C4 /* ppatAddToDoItemViewController.m */,
 				72B68C9B1831295500F6C0C4 /* PPAT */,
 				72B68CB41831295500F6C0C4 /* PPATTests */,
@@ -273,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72902D4E184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m in Sources */,
 				72B68CA21831295500F6C0C4 /* main.m in Sources */,
 				72B68CCB1842AF8C00F6C0C4 /* ppatToDoListViewController.m in Sources */,
+				72CC93FE184B18750055F3F7 /* ppatOptionViewController.m in Sources */,
 				72B68CA61831295500F6C0C4 /* ppatAppDelegate.m in Sources */,
+				72902D51184BE2FC00EF58B4 /* ppatViewTaskViewController.m in Sources */,
 				72661BDC184AE82B00CE1AA7 /* ppatAddStepViewController.m in Sources */,
 				72B68CC81842AD0700F6C0C4 /* ppatAddToDoItemViewController.m in Sources */,
 				72B68CCE1842B8BB00F6C0C4 /* ppatToDoItem.m in Sources */,
