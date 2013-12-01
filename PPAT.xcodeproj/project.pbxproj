@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72661BDC184AE82B00CE1AA7 /* ppatAddStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */; };
+		72661BDF184AEDAE00CE1AA7 /* ppatStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 72661BDE184AEDAE00CE1AA7 /* ppatStep.m */; };
 		72B68C961831295500F6C0C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B68C951831295500F6C0C4 /* Foundation.framework */; };
 		72B68C981831295500F6C0C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B68C971831295500F6C0C4 /* CoreGraphics.framework */; };
 		72B68C9A1831295500F6C0C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B68C991831295500F6C0C4 /* UIKit.framework */; };
@@ -23,6 +25,7 @@
 		72B68CC81842AD0700F6C0C4 /* ppatAddToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CC71842AD0700F6C0C4 /* ppatAddToDoItemViewController.m */; };
 		72B68CCB1842AF8C00F6C0C4 /* ppatToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CCA1842AF8C00F6C0C4 /* ppatToDoListViewController.m */; };
 		72B68CCE1842B8BB00F6C0C4 /* ppatToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CCD1842B8BB00F6C0C4 /* ppatToDoItem.m */; };
+		72CC93FB184B0F780055F3F7 /* Copy in Resources */ = {isa = PBXBuildFile; fileRef = 72CC93FA184B0F780055F3F7 /* Copy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72661BDA184AE82B00CE1AA7 /* ppatAddStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ppatAddStepViewController.h; path = PPAT/ppatAddStepViewController.h; sourceTree = "<group>"; };
+		72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ppatAddStepViewController.m; path = PPAT/ppatAddStepViewController.m; sourceTree = "<group>"; };
+		72661BDD184AEDAE00CE1AA7 /* ppatStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatStep.h; sourceTree = "<group>"; };
+		72661BDE184AEDAE00CE1AA7 /* ppatStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatStep.m; sourceTree = "<group>"; };
 		72B68C921831295500F6C0C4 /* PPAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B68C951831295500F6C0C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		72B68C971831295500F6C0C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,6 +66,7 @@
 		72B68CCA1842AF8C00F6C0C4 /* ppatToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatToDoListViewController.m; sourceTree = "<group>"; };
 		72B68CCC1842B8BB00F6C0C4 /* ppatToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatToDoItem.h; sourceTree = "<group>"; };
 		72B68CCD1842B8BB00F6C0C4 /* ppatToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatToDoItem.m; sourceTree = "<group>"; };
+		72CC93FA184B0F780055F3F7 /* Copy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Copy; path = ../../../Copy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,8 @@
 		72B68C891831295500F6C0C4 = {
 			isa = PBXGroup;
 			children = (
+				72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */,
+				72661BDA184AE82B00CE1AA7 /* ppatAddStepViewController.h */,
 				72B68CC61842AD0700F6C0C4 /* ppatAddToDoItemViewController.h */,
 				72B68CC71842AD0700F6C0C4 /* ppatAddToDoItemViewController.m */,
 				72B68C9B1831295500F6C0C4 /* PPAT */,
@@ -123,6 +133,9 @@
 				72B68CA41831295500F6C0C4 /* ppatAppDelegate.h */,
 				72B68CA51831295500F6C0C4 /* ppatAppDelegate.m */,
 				72B68CC4183DBE7500F6C0C4 /* Main.storyboard */,
+				72CC93FA184B0F780055F3F7 /* Copy */,
+				72661BDD184AEDAE00CE1AA7 /* ppatStep.h */,
+				72661BDE184AEDAE00CE1AA7 /* ppatStep.m */,
 				72B68CC91842AF8C00F6C0C4 /* ppatToDoListViewController.h */,
 				72B68CCA1842AF8C00F6C0C4 /* ppatToDoListViewController.m */,
 				72B68CCC1842B8BB00F6C0C4 /* ppatToDoItem.h */,
@@ -241,6 +254,7 @@
 				72B68CC5183DBE7500F6C0C4 /* Main.storyboard in Resources */,
 				72B68CA01831295500F6C0C4 /* InfoPlist.strings in Resources */,
 				72B68CA81831295500F6C0C4 /* Images.xcassets in Resources */,
+				72CC93FB184B0F780055F3F7 /* Copy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +276,10 @@
 				72B68CA21831295500F6C0C4 /* main.m in Sources */,
 				72B68CCB1842AF8C00F6C0C4 /* ppatToDoListViewController.m in Sources */,
 				72B68CA61831295500F6C0C4 /* ppatAppDelegate.m in Sources */,
+				72661BDC184AE82B00CE1AA7 /* ppatAddStepViewController.m in Sources */,
 				72B68CC81842AD0700F6C0C4 /* ppatAddToDoItemViewController.m in Sources */,
 				72B68CCE1842B8BB00F6C0C4 /* ppatToDoItem.m in Sources */,
+				72661BDF184AEDAE00CE1AA7 /* ppatStep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +486,7 @@
 				72B68CC01831295500F6C0C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72B68CC11831295500F6C0C4 /* Build configuration list for PBXNativeTarget "PPATTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +495,7 @@
 				72B68CC31831295500F6C0C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C75FA177-F7D0-48D5-B1CA-98E8196A80E6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PPAT</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>560C1B16-4340-472A-850E-8D5722A21FD8</key>
+		<string>https://github.com/tkrishnan/project_marla.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PPAT.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>560C1B16-4340-472A-850E-8D5722A21FD8</key>
+		<string>../..</string>
+		<key>C2766AFE-977B-45F7-93A8-8D41D0A34C60</key>
+		<string>../../PPAT</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tkrishnan/project_marla.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>560C1B16-4340-472A-850E-8D5722A21FD8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C2766AFE-977B-45F7-93A8-8D41D0A34C60</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PPAT</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>560C1B16-4340-472A-850E-8D5722A21FD8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>project_marla</string>
+		</dict>
+	</array>
+</dict>
+</plist>

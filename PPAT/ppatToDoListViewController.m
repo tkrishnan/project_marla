@@ -11,9 +11,7 @@
 #import "ppatToDoItem.h"
 
 @interface ppatToDoListViewController ()
-
-@property NSMutableArray *toDoItems;
-
+    @property NSMutableArray *toDoItems;
 @end
 
 @implementation ppatToDoListViewController
@@ -46,6 +44,8 @@
     [super viewDidLoad];
     self.toDoItems = [[NSMutableArray alloc] init];
     [self loadInitialData];
+    //this code makes the red minus signs appear on the page
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
 
     // Uncomment the following line to preserve selection between presentations.
@@ -82,8 +82,15 @@
     
     ppatToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
     cell.textLabel.text = toDoItem.itemName;
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 /*

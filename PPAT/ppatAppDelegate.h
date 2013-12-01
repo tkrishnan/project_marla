@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ppatStep.h"
 
 @interface ppatAppDelegate : UIResponder <UIApplicationDelegate>
 
