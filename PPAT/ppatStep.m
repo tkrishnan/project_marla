@@ -10,4 +10,10 @@
 
 @implementation ppatStep
 
+@dynamic stepText;
+@dynamic stepNumber;
+@dynamic creationDate;
+@dynamic taskName;
+@dynamic completed;
+
 @end

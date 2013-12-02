@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ppatStep : NSObject
+@interface ppatStep : NSManagedObject
 @property NSString *stepText;
 @property NSNumber *stepNumber;
 @property BOOL completed;
 @property (readonly) NSDate *creationDate;
+@property NSString *taskName;
 @end

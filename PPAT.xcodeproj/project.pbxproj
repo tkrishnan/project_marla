@@ -27,8 +27,9 @@
 		72B68CC81842AD0700F6C0C4 /* ppatAddToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CC71842AD0700F6C0C4 /* ppatAddToDoItemViewController.m */; };
 		72B68CCB1842AF8C00F6C0C4 /* ppatToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CCA1842AF8C00F6C0C4 /* ppatToDoListViewController.m */; };
 		72B68CCE1842B8BB00F6C0C4 /* ppatToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B68CCD1842B8BB00F6C0C4 /* ppatToDoItem.m */; };
-		72CC93FB184B0F780055F3F7 /* Copy in Resources */ = {isa = PBXBuildFile; fileRef = 72CC93FA184B0F780055F3F7 /* Copy */; };
 		72CC93FE184B18750055F3F7 /* ppatOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CC93FD184B18750055F3F7 /* ppatOptionViewController.m */; };
+		F3A67D89184C3925006E86D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3A67D88184C3925006E86D6 /* CoreData.framework */; };
+		F3A67D8C184C3993006E86D6 /* todoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3A67D8A184C3993006E86D6 /* todoModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +74,10 @@
 		72B68CCA1842AF8C00F6C0C4 /* ppatToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatToDoListViewController.m; sourceTree = "<group>"; };
 		72B68CCC1842B8BB00F6C0C4 /* ppatToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatToDoItem.h; sourceTree = "<group>"; };
 		72B68CCD1842B8BB00F6C0C4 /* ppatToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatToDoItem.m; sourceTree = "<group>"; };
-		72CC93FA184B0F780055F3F7 /* Copy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Copy; path = ../../../Copy; sourceTree = "<group>"; };
 		72CC93FC184B18750055F3F7 /* ppatOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ppatOptionViewController.h; path = PPAT/ppatOptionViewController.h; sourceTree = "<group>"; };
 		72CC93FD184B18750055F3F7 /* ppatOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ppatOptionViewController.m; path = PPAT/ppatOptionViewController.m; sourceTree = "<group>"; };
+		F3A67D88184C3925006E86D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F3A67D8B184C3993006E86D6 /* todoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = todoModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A67D89184C3925006E86D6 /* CoreData.framework in Frameworks */,
 				72B68C981831295500F6C0C4 /* CoreGraphics.framework in Frameworks */,
 				72B68C9A1831295500F6C0C4 /* UIKit.framework in Frameworks */,
 				72B68C961831295500F6C0C4 /* Foundation.framework in Frameworks */,
@@ -134,6 +137,7 @@
 		72B68C941831295500F6C0C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3A67D88184C3925006E86D6 /* CoreData.framework */,
 				72B68C951831295500F6C0C4 /* Foundation.framework */,
 				72B68C971831295500F6C0C4 /* CoreGraphics.framework */,
 				72B68C991831295500F6C0C4 /* UIKit.framework */,
@@ -148,8 +152,8 @@
 				72B68CA41831295500F6C0C4 /* ppatAppDelegate.h */,
 				72B68CA51831295500F6C0C4 /* ppatAppDelegate.m */,
 				72B68CC4183DBE7500F6C0C4 /* Main.storyboard */,
-				72CC93FA184B0F780055F3F7 /* Copy */,
 				72661BDD184AEDAE00CE1AA7 /* ppatStep.h */,
+				F3A67D8A184C3993006E86D6 /* todoModel.xcdatamodeld */,
 				72661BDE184AEDAE00CE1AA7 /* ppatStep.m */,
 				72B68CC91842AF8C00F6C0C4 /* ppatToDoListViewController.h */,
 				72B68CCA1842AF8C00F6C0C4 /* ppatToDoListViewController.m */,
@@ -269,7 +273,6 @@
 				72B68CC5183DBE7500F6C0C4 /* Main.storyboard in Resources */,
 				72B68CA01831295500F6C0C4 /* InfoPlist.strings in Resources */,
 				72B68CA81831295500F6C0C4 /* Images.xcassets in Resources */,
-				72CC93FB184B0F780055F3F7 /* Copy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72902D4E184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m in Sources */,
+				F3A67D8C184C3993006E86D6 /* todoModel.xcdatamodeld in Sources */,
 				72B68CA21831295500F6C0C4 /* main.m in Sources */,
 				72B68CCB1842AF8C00F6C0C4 /* ppatToDoListViewController.m in Sources */,
 				72CC93FE184B18750055F3F7 /* ppatOptionViewController.m in Sources */,
@@ -516,6 +520,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F3A67D8A184C3993006E86D6 /* todoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3A67D8B184C3993006E86D6 /* todoModel.xcdatamodel */,
+			);
+			currentVersion = F3A67D8B184C3993006E86D6 /* todoModel.xcdatamodel */;
+			path = todoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 72B68C8A1831295500F6C0C4 /* Project object */;
 }

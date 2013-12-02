@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Step" syncable="YES">
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stepNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stepText" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ToDoItem" inverseName="stepSet" inverseEntity="ToDoItem" syncable="YES"/>
+    </entity>
+    <entity name="ToDoItem" representedClassName="ppatToDoItem" syncable="YES">
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="itemName" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="stepSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Step" inverseName="task" inverseEntity="Step" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Step" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="ToDoItem" positionX="-389" positionY="-42" width="128" height="103"/>
+    </elements>
+</model>

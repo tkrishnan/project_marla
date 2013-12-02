@@ -7,8 +7,14 @@
 //
 
 #import "ppatAppDelegate.h"
+#import "ppatToDoItem.h"
+#import "ppatStep.h"
 
 @implementation ppatAppDelegate
+
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -40,6 +46,136 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (NSManagedObjectContext *) managedObjectContext {
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
+    }
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator: coordinator];
+    }
+    
+    return _managedObjectContext;
+}
+
+//2
+- (NSManagedObjectModel *)managedObjectModel {
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    
+    return _managedObjectModel;
+}
+
+//3
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
+    }
+    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory]
+                                               stringByAppendingPathComponent: @"TaskDB.sqlite"]];
+    NSError *error = nil;
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
+                                   initWithManagedObjectModel:[self managedObjectModel]];
+    if(![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                  configuration:nil URL:storeUrl options:nil error:&error]) {
+        /*Error for store creation should be handled in here*/
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+- (NSString *)applicationDocumentsDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+- (NSArray *)getTaskWithName:(NSString *)taskName
+{
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TodoItem"
+                                              inManagedObjectContext:self.managedObjectContext];
+    
+    NSPredicate *query = [NSPredicate predicateWithFormat:@"(itemName=%@)", taskName];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:query];
+    NSError* error;
+    
+    // Query on managedObjectContext With Generated fetchRequest
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    // Returning Fetched Records
+    return fetchedRecords;
+}
+
+- (NSArray *)getAllTasks
+{
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDoItem"
+                                              inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
+    NSError* error;
+    
+    // Query on managedObjectContext With Generated fetchRequest
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    // Returning Fetched Records
+    return fetchedRecords;
+    
+}
+
+- (void)insertNewTask:(ppatToDoItem *)task withSteps:(NSArray *)steps
+{
+    ppatToDoItem * newTask = [NSEntityDescription insertNewObjectForEntityForName:@"ToDoItem"
+                                                      inManagedObjectContext:self.managedObjectContext];
+    //  TODO: clean
+    newTask.itemName = task.itemName;
+    newTask.completed = NO;
+
+    NSMutableArray *stepArray = [NSMutableArray array];
+    
+    //iterate and make Step
+    [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        ppatStep *step = [NSEntityDescription insertNewObjectForEntityForName:@"Step" inManagedObjectContext:self.managedObjectContext];
+        
+        ppatStep * stepToCopy = obj;
+        step.stepText = stepToCopy.stepText;
+        step.stepNumber = stepToCopy.stepNumber;
+        step.completed = NO;
+        
+        [stepArray addObject:step];
+        
+    }];
+    
+    newTask.stepSet = [NSSet setWithArray:stepArray];
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+
+}
+
+-(BOOL)deleteStep:(ppatStep *)step
+{
+    [self.managedObjectContext deleteObject:step];
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

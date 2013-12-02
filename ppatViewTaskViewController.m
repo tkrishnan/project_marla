@@ -10,6 +10,7 @@
 #import "ppatToDoItem.h"
 #import "ppatStep.h"
 #import "ppatAddStepViewController.h"
+#import "ppatAppDelegate.h"
 
 @interface ppatViewTaskViewController ()
     - (IBAction)editTable:(id)sender;
@@ -103,8 +104,10 @@
 
 - (void)tableView: (UITableView *)tableView commitEditingStyle: (UITableViewCellEditingStyle)editingStyle forRowAtIndexPath: (NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [currItem.stepsList removeObjectAtIndex:[indexPath row]];
+        // Delete the step from the data source
+        ppatAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+        [appDelegate deleteStep:[currItem.stepsList objectAtIndex:[indexPath row]]];
+        [currItem refreshStepsList];
         // Delete row using the cool literal version of [NSArray arrayWithObject:indexPath]
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }

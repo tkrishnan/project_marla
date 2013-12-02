@@ -26,8 +26,11 @@
     ppatAddToDoItemViewController *source = [segue sourceViewController];
     ppatToDoItem *item = source.toDoItem;
     item.stepsList = source.taskStepsArray;
+    
     if (item != nil) {
-        [self.toDoItems addObject:item];
+        ppatAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+        [appDelegate insertNewTask:item withSteps:item.stepsList];
+        self.toDoItems = [NSMutableArray arrayWithArray:[appDelegate getAllTasks]];
         [self.tableView reloadData];
     }
 }
@@ -59,7 +62,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.toDoItems = [[NSMutableArray alloc] init];
+
+    ppatAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    self.toDoItems = [NSMutableArray arrayWithArray:[appDelegate getAllTasks]];
     [self loadInitialData];
     //this code makes the red minus signs appear on the page
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -132,7 +139,9 @@
     if ([segue.identifier isEqualToString:@"selectSingleTask"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         ppatOptionViewController *destViewController = segue.destinationViewController;
+        ppatToDoItem *test = [self.toDoItems objectAtIndex:indexPath.row];
         NSLog(@"ToDolistView: prepareForSegue selected item %@", [[self.toDoItems objectAtIndex:indexPath.row] itemName]);
+        NSLog(@"ToDolistView: prepareForSegue selected item %@", test.stepsList);
         destViewController.taskName = [[self.toDoItems objectAtIndex:indexPath.row] itemName];
         destViewController.currItem =[self.toDoItems objectAtIndex:indexPath.row];
     }

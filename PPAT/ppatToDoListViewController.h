@@ -12,6 +12,6 @@
     @property(nonatomic, readonly) NSInteger numberOfButtons;
     @property(nonatomic, copy) NSString *message;
     @property(nonatomic, copy) NSString *title;
-
+    @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
 
