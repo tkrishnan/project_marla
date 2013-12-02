@@ -7,13 +7,18 @@
 //
 
 #import "ppatStepThroughTaskViewController.h"
+#import "ppatStep.h"
+#import "ppatToDoItem.h"
 
 @interface ppatStepThroughTaskViewController ()
-
+- (IBAction)nextStep:(id)sender;
+- (IBAction)previousStep:(id)sender;
 @end
 
 @implementation ppatStepThroughTaskViewController
-@synthesize currItem;
+
+@synthesize currItem, stepText, stepNumber, nextStep, previousStep;
+int count;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +32,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
+    count=0;
+    UINavigationController *navCon  = (UINavigationController*) [self.navigationController.viewControllers objectAtIndex:2];
+    navCon.navigationItem.title =currItem.itemName;
+    NSString *step = @"Step ";
+    NSString *strFromInt = [NSString stringWithFormat:@"%d: ", count+1];
+    stepNumber.text = [step stringByAppendingString:strFromInt];
+    ppatStep *temp = [currItem.stepsList objectAtIndex:count];
+    NSString *temp_string = temp.stepText;
+    NSLog(@"%@", temp_string);
+    stepText.text = temp_string; }
 
 - (void)didReceiveMemoryWarning
 {
@@ -36,4 +49,54 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)changeNavBarDetails{
+    UINavigationController *navCon  = (UINavigationController*) [self.navigationController.viewControllers objectAtIndex:2];
+    navCon.navigationItem.title = currItem.itemName;
+    NSLog(@"%@", currItem);
+    ppatStep *temp = [currItem.stepsList objectAtIndex:count];
+    NSString *temp_string = temp.stepText;
+    NSLog(@"%@", temp_string);
+    stepText.text = temp_string;
+}
+
+- (IBAction)nextStep:(id)sender {
+    if (count + 1 != [currItem.stepsList count]){
+        count = count + 1;
+        NSString *step = @"Step ";
+        NSString *strFromInt = [NSString stringWithFormat:@"%d: ", count+1];
+        stepNumber.text = [step stringByAppendingString:strFromInt];
+        ppatStep *temp = [currItem.stepsList objectAtIndex:count];
+        NSString *temp_string = temp.stepText;
+        stepText.text = temp_string;
+        if (previousStep.hidden){
+            previousStep.hidden = NO;
+        }
+    }
+    else{
+        count = count + 1;
+        stepText.text = @"";
+        stepNumber.text = @"Congratulations on Successfully Walking Through This Task!";
+        stepNumber.numberOfLines = 0;
+        [stepNumber sizeToFit];
+        nextStep.hidden = YES;
+    }
+}
+
+- (IBAction)previousStep:(id)sender {
+    if (nextStep.hidden){
+        nextStep.hidden = NO;
+    }
+    if (count - 1  >= 0){
+        count = count - 1;
+        NSString *step = @"Step ";
+        NSString *strFromInt = [NSString stringWithFormat:@"%d: ", count+1];
+        stepNumber.text = [step stringByAppendingString:strFromInt];
+        ppatStep *temp = [currItem.stepsList objectAtIndex:count];
+        NSString *temp_string = temp.stepText;
+        stepText.text = temp_string;
+        if (count ==0){
+            previousStep.hidden = YES;
+        }
+    }
+}
 @end

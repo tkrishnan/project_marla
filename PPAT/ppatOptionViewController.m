@@ -43,7 +43,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"Option: prepareForSegue");
     if ([segue.identifier isEqualToString:@"stepThroughTask"]) {
         NSLog(@"Option: prepareForSegue stepThroughTask");
         ppatStepThroughTaskViewController *destViewController = segue.destinationViewController;
