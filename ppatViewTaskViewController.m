@@ -9,25 +9,24 @@
 #import "ppatViewTaskViewController.h"
 #import "ppatToDoItem.h"
 #import "ppatStep.h"
+#import "ppatAddStepViewController.h"
 
 @interface ppatViewTaskViewController ()
+    - (IBAction)editTable:(id)sender;
 @end
 
 @implementation ppatViewTaskViewController
-@synthesize currItem, stepsTable, saveTaskButton, cancelButton, taskTitle;
-//
-//- (IBAction)unwindToAddTask:(UIStoryboardSegue *)segue
-//{
-//    ppatViewTaskViewController *source = [segue sourceViewController];
-//    ppatStep *step = source.thisStep;
-//    if (step != nil) {
-//        [self.taskStepsArray addObject:step];
-//        [self.stepsTableView reloadData];
-//        
-//    }
-//}
+@synthesize currItem, stepsTable, saveTaskButton, editTaskButton, cancelButton, taskTitle;
 
-
+- (IBAction)unwindToAddTask:(UIStoryboardSegue *)segue
+{
+    ppatAddStepViewController *source = [segue sourceViewController];
+    ppatStep *step = source.thisStep;
+    if (step != nil) {
+        [self.currItem.stepsList addObject:step];
+        [self.stepsTable reloadData];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,7 +44,6 @@
     stepsTable.delegate = self;
     stepsTable.dataSource = self;
     taskTitle.text = currItem.itemName;
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,14 +88,36 @@
 }
 
 -(void)tableView:(UITableView *)tableview didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    NSLog(@"i am editing");
     [stepsTable deselectRowAtIndexPath:indexPath animated:YES];
-    
-    NSString *selectedString = [currItem.stepsList objectAtIndex:indexPath.row];
-    
-    NSLog(@"test item %@", selectedString);
-    
+    if ([tableview isEditing]){
+        NSLog(@"ING");
+        [tableview setEditing:NO animated:YES];
+    }
+    else{
+        NSLog(@"NOT NOT");
+        
+        [tableview setEditing:YES animated:YES];
+    }
 }
 
+- (void)tableView: (UITableView *)tableView commitEditingStyle: (UITableViewCellEditingStyle)editingStyle forRowAtIndexPath: (NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [currItem.stepsList removeObjectAtIndex:[indexPath row]];
+        // Delete row using the cool literal version of [NSArray arrayWithObject:indexPath]
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    if ([tableView isEditing]){
+        NSLog(@"ING");
+        [tableView setEditing:NO animated:YES];
+    }
+    else{
+        NSLog(@"NOT NOT");
+        
+        [tableView setEditing:YES animated:YES];
+        [tableView reloadData];
+    }
+}
 
 @end

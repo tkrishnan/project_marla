@@ -9,9 +9,11 @@
 #import "ppatAddStepViewController.h"
 
 @interface ppatAddStepViewController ()
+
     @property (weak, nonatomic) IBOutlet UITextField *textField;
     @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
     @property (weak, nonatomic) IBOutlet UIButton *saveStepButton;
+
 @end
 
 @implementation ppatAddStepViewController

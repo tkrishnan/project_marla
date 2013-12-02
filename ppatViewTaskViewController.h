@@ -15,5 +15,5 @@
     @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveTaskButton;
     @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
     @property (weak, nonatomic) IBOutlet UILabel *taskTitle;
-
+    @property (weak, nonatomic) IBOutlet UIButton *editTaskButton;
 @end

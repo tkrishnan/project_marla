@@ -11,7 +11,7 @@
 #import "ppatStep.h"
 
 
-@interface ppatAddToDoItemViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ppatAddToDoItemViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
     @property NSMutableArray *taskStepsArray;
     @property ppatToDoItem *toDoItem;

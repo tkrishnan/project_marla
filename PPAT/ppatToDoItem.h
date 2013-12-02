@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ppatToDoItem : NSObject
-
-@property NSString *itemName;
-@property NSMutableArray *stepsList;
-@property BOOL completed;
-@property (readonly) NSDate *creationDate;
-
+    @property NSString *itemName;
+    @property NSMutableArray *stepsList;
+    @property BOOL completed;
+    @property (readonly) NSDate *creationDate;
 @end

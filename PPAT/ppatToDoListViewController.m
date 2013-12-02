@@ -101,8 +101,26 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"ToDolistView: didSelectRowAtIndexPath");
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return YES - we will be able to delete all rows
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Perform the real delete action here. Note: you may need to check editing style
+    //   if you do not perform delete only.
     
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"Deleted row.");
+        // Delete the row from the data source
+        [self.toDoItems removeObjectAtIndex:[indexPath row]];
+        // Delete row using the cool literal version of [NSArray arrayWithObject:indexPath]
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 #pragma mark - Navigation
@@ -118,12 +136,6 @@
         destViewController.taskName = [[self.toDoItems objectAtIndex:indexPath.row] itemName];
         destViewController.currItem =[self.toDoItems objectAtIndex:indexPath.row];
     }
-    
 }
-
-
-
-
-
 
 @end
