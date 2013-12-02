@@ -11,7 +11,6 @@
 #import "ppatStep.h"
 
 @interface ppatViewTaskViewController ()
-
 @end
 
 @implementation ppatViewTaskViewController

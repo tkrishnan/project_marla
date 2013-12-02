@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FPD-GE-PtG">
-                                <rect key="frame" x="20" y="80" width="280" height="418"/>
+                                <rect key="frame" x="20" y="87" width="280" height="418"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -90,7 +90,15 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Current Task:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ov-XT-1L0">
-                                <rect key="frame" x="20" y="73" width="280" height="21"/>
+                                <rect key="frame" x="20" y="71" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5" green="0.1224142247" blue="0.23242696069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.9985825237" blue="0.96781366160000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Steps For This Task:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L0-Ot-PkY">
+                                <rect key="frame" x="20" y="127" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5" green="0.1224142247" blue="0.23242696069999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -98,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Title goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v00-11-OGa">
-                                <rect key="frame" x="20" y="102" width="280" height="21"/>
+                                <rect key="frame" x="20" y="97" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -108,7 +116,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="twC-LZ-ZVO">
-                        <barButtonItem key="leftBarButtonItem" title="Back to MyTasks" id="Gql-50-7LP"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back to MyTasks" id="Gql-50-7LP">
+                            <connections>
+                                <segue destination="FKi-P0-29i" kind="unwind" unwindAction="unwindFromViewToMain:" id="3Me-vW-Tft"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="Xq4-Wf-c4C"/>
                     </navigationItem>
                     <connections>
@@ -119,8 +131,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbt-Mn-zaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FKi-P0-29i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="741"/>
+            <point key="canvasLocation" x="2220" y="741"/>
         </scene>
         <!--Ppat Add To Do Item View Controller - Create New Task-->
         <scene sceneID="7Bx-qP-s33">
@@ -361,16 +374,33 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgo-sc-UXD">
+                                <rect key="frame" x="20" y="338" width="280" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.9985825237" blue="0.96781366160000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Back To MyTasks">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="aPD-9f-x4i" kind="unwind" unwindAction="unwindFromStepToMain:" id="Llc-jB-Ci4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Step Through Task" id="Q4Q-uJ-Wkg">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="owu-mp-HTE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="owu-mp-HTE">
+                            <connections>
+                                <segue destination="aPD-9f-x4i" kind="unwind" unwindAction="unwindFromStepToMain:" id="YZN-E9-Ke6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfY-Ww-JDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aPD-9f-x4i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="834" y="741"/>
+            <point key="canvasLocation" x="1360" y="741"/>
         </scene>
         <!--Ppat Option View Controller - Select A Viewing Option-->
         <scene sceneID="E14-Au-iRj">
@@ -408,7 +438,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kKv-3s-d8I" kind="modal" identifier="stepThroughTask" id="JAN-HK-Zgh"/>
+                                    <segue destination="kKv-3s-d8I" kind="push" id="CW0-Cq-BBu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huI-YH-YA1">
@@ -423,6 +453,18 @@
                                     <segue destination="vdH-i5-2qK" kind="push" identifier="viewTask" id="V8Q-3Y-1bh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxK-Qr-6Fj">
+                                <rect key="frame" x="20" y="339" width="280" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.9985825237" blue="0.96781366160000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Back To MyTasks">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="so5-e3-Wd0" kind="unwind" unwindAction="unwindFromOptionToMain:" id="SnG-XJ-XsQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -434,8 +476,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fc3-uL-wlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="so5-e3-Wd0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="741"/>
+            <point key="canvasLocation" x="1791" y="741"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hWB-JF-IdU">
@@ -473,24 +516,6 @@
             </objects>
             <point key="canvasLocation" x="748" y="1411"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6Ox-T6-TZT">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1WA-d0-XRu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zg6-3d-eGa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kKv-3s-d8I" kind="relationship" relationship="rootViewController" id="df7-dz-JH3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J1d-xj-hKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="308" y="741"/>
-        </scene>
         <!--Table View Controller-->
         <scene sceneID="r9p-XV-UIx">
             <objects>
@@ -518,6 +543,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRg-lF-cce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ybi-FK-pGL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uy9-zk-RhZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qxz-z5-m0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kKv-3s-d8I" kind="relationship" relationship="rootViewController" id="Fzy-iC-Sef"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Em-gI-kFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="741"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -527,7 +570,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Eth-Qu-rDA"/>
         <segue reference="7fl-H7-s0Y"/>
+        <segue reference="CW0-Cq-BBu"/>
         <segue reference="V8Q-3Y-1bh"/>
-        <segue reference="JAN-HK-Zgh"/>
     </inferredMetricsTieBreakers>
 </document>

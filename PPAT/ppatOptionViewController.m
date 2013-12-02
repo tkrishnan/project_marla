@@ -18,6 +18,7 @@
 @implementation ppatOptionViewController
 @synthesize currItem, taskName, taskTitle, viewTaskButton, stepThroughButton;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -32,6 +32,21 @@
     }
 }
 
+- (IBAction)unwindFromOptionToMain:(UIStoryboardSegue *)segue
+{
+    ppatOptionViewController *source = [segue sourceViewController];
+}
+
+- (IBAction)unwindFromViewToMain:(UIStoryboardSegue *)segue
+{
+    ppatOptionViewController *source = [segue sourceViewController];
+}
+
+- (IBAction)unwindFromStepToMain:(UIStoryboardSegue *)segue
+{
+    ppatOptionViewController *source = [segue sourceViewController];
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
