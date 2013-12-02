@@ -136,28 +136,28 @@
 
 - (void)insertNewTask:(ppatToDoItem *)task withSteps:(NSArray *)steps
 {
-    ppatToDoItem * newTask = [NSEntityDescription insertNewObjectForEntityForName:@"ToDoItem"
-                                                      inManagedObjectContext:self.managedObjectContext];
-    //  TODO: clean
-    newTask.itemName = task.itemName;
-    newTask.completed = NO;
-
-    NSMutableArray *stepArray = [NSMutableArray array];
+//    ppatToDoItem * newTask = [NSEntityDescription insertNewObjectForEntityForName:@"ToDoItem"
+//                                                      inManagedObjectContext:self.managedObjectContext];
+//    //  TODO: clean
+//    newTask.itemName = task.itemName;
+//    newTask.completed = NO;
+//
+//    NSMutableArray *stepArray = [NSMutableArray array];
+//    
+//    //iterate and make Step
+//    [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//        ppatStep *step = [NSEntityDescription insertNewObjectForEntityForName:@"Step" inManagedObjectContext:self.managedObjectContext];
+//        
+//        ppatStep * stepToCopy = obj;
+//        step.stepText = stepToCopy.stepText;
+//        step.stepNumber = stepToCopy.stepNumber;
+//        step.completed = NO;
+//        
+//        [stepArray addObject:step];
+//        
+//    }];
     
-    //iterate and make Step
-    [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        ppatStep *step = [NSEntityDescription insertNewObjectForEntityForName:@"Step" inManagedObjectContext:self.managedObjectContext];
-        
-        ppatStep * stepToCopy = obj;
-        step.stepText = stepToCopy.stepText;
-        step.stepNumber = stepToCopy.stepNumber;
-        step.completed = NO;
-        
-        [stepArray addObject:step];
-        
-    }];
-    
-    newTask.stepSet = [NSSet setWithArray:stepArray];
+    task.stepSet = [NSSet setWithArray:steps];
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {

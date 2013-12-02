@@ -7,6 +7,7 @@
 //
 
 #import "ppatAddStepViewController.h"
+#import "ppatAppDelegate.h"
 
 @interface ppatAddStepViewController ()
 
@@ -23,7 +24,9 @@
 //    if the save step button is not pressed return without doing anything.
     if (sender != self.saveStepButton) return;
     if (self.textField.text.length > 0) {
-        self.thisStep = [[ppatStep alloc] init];
+        ppatAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+        self.thisStep = [NSEntityDescription insertNewObjectForEntityForName:@"Step"
+                                                      inManagedObjectContext:appDelegate.managedObjectContext];
         self.thisStep.stepText = self.textField.text;
         self.thisStep.completed = NO;
     }

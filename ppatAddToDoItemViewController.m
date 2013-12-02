@@ -8,6 +8,7 @@
 
 #import "ppatAddToDoItemViewController.h"
 #import "ppatAddStepViewController.h"
+#import "ppatAppDelegate.h"
 
 
 @interface ppatAddToDoItemViewController ()
@@ -32,7 +33,9 @@
 {
     if (sender != self.doneButton) return;
     if (self.textField.text.length > 0) {
-        self.toDoItem = [[ppatToDoItem alloc] init];
+        ppatAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+        self.toDoItem = [NSEntityDescription insertNewObjectForEntityForName:@"ToDoItem"
+                                                      inManagedObjectContext:appDelegate.managedObjectContext];
         self.toDoItem.itemName = self.textField.text;
         self.toDoItem.completed = NO;
     }
