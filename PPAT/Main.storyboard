@@ -381,6 +381,8 @@
                         <outlet property="currentTimeText" destination="Znu-T9-nmz" id="4TX-De-XeG"/>
                         <outlet property="greetingText" destination="jb3-ai-avJ" id="46y-lZ-hOF"/>
                         <outlet property="pickMeUpText" destination="HJr-e3-5vJ" id="ezY-uL-6xa"/>
+                        <outlet property="taskListButton" destination="zl0-Qp-Fdl" id="f7L-e6-pYt"/>
+                        <outlet property="todayText" destination="2qX-Nu-l5j" id="j2j-FG-3sw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvl-M2-hH4" userLabel="First Responder" sceneMemberID="firstResponder"/>

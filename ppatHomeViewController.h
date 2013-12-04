@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pickMeUpText;
 @property (weak, nonatomic) IBOutlet UILabel *currentDateText;
 @property (weak, nonatomic) IBOutlet UILabel *currentTimeText;
+@property (weak, nonatomic) IBOutlet UILabel *todayText;
+@property (weak, nonatomic) IBOutlet UIButton *taskListButton;
 
 @end
