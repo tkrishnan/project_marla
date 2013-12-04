@@ -95,11 +95,22 @@ int count;
     }
     else{
         count = count + 1;
-        stepText.text = @"";
-        stepNumber.text = @"Congratulations on Successfully Walking Through This Task!";
-        stepNumber.numberOfLines = 0;
-        [stepNumber sizeToFit];
         nextStep.hidden = YES;
+        previousStep.hidden = YES;
+        stepNumber.hidden = YES;
+        self.haveYouDone.hidden = YES;
+        [UIView animateWithDuration:.1 animations:^{
+            stepText.alpha = 0.0;
+        }];
+        NSArray *congratsTexts = @[@"Woohoo!", @"Way to go!", @"Nicely Done!", @"Congrats!", @"Good Job!"];
+        NSString *temporary = @"\n You Finished This Task!";
+        NSUInteger randIndexOne = arc4random() % [congratsTexts count];
+        stepText.text = [[congratsTexts objectAtIndex:randIndexOne] stringByAppendingString:temporary];
+        [UIView animateWithDuration:1.5 animations:^{
+            stepText.alpha = 1.0;
+        }];
+        //stepText.textColor = [UIColor colorWithRed:142 green:137 blue:255 alpha:1.0];
+        [stepText sizeThatFits:CGSizeMake(280, 80)];
     }
 }
 

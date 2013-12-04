@@ -36,8 +36,8 @@
                         </prototypes>
                         <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="YVX-dN-gnL" id="fq6-yh-bH1"/>
-                            <outlet property="delegate" destination="YVX-dN-gnL" id="uHs-RV-l0s"/>
+                            <outlet property="dataSource" destination="YVX-dN-gnL" id="1lA-Vz-AII"/>
+                            <outlet property="delegate" destination="YVX-dN-gnL" id="gFl-GR-bMj"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Tasks" id="3Nf-wg-EJR">
@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FPD-GE-PtG">
-                                <rect key="frame" x="20" y="188" width="280" height="282"/>
+                                <rect key="frame" x="20" y="188" width="280" height="220"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -96,7 +96,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x26-mS-fA8">
-                                <rect key="frame" x="20" y="486" width="280" height="52"/>
+                                <rect key="frame" x="20" y="427" width="280" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.45609205429999999" green="0.49080748029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -472,7 +472,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJ9-qi-zEM">
                                 <rect key="frame" x="20" y="283" width="280" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.45609205429999999" green="0.49080748029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.55686277151107788" green="0.5372549295425415" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Yes">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -514,6 +514,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="haveYouDone" destination="FdI-xe-WMM" id="Vct-hr-hHX"/>
                         <outlet property="nextStep" destination="OJ9-qi-zEM" id="1yY-uG-eS5"/>
                         <outlet property="previousStep" destination="jiB-dJ-Iak" id="5Yg-e5-dNX"/>
                         <outlet property="stepNumber" destination="a5R-Tz-y3X" id="iwr-sf-WT6"/>

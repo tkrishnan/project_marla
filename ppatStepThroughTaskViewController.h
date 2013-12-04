@@ -13,6 +13,7 @@
     @property (weak, nonatomic) ppatToDoItem *currItem;
     @property (weak, nonatomic) IBOutlet UILabel *stepText;
     @property (weak, nonatomic) IBOutlet UILabel *stepNumber;
+@property (weak, nonatomic) IBOutlet UILabel *haveYouDone;
     @property (weak, nonatomic) IBOutlet UIButton *nextStep;
     @property (weak, nonatomic) IBOutlet UIButton *previousStep;
 @end
