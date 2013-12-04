@@ -21,4 +21,5 @@
 -(NSArray *)getAllTasks;
 -(void)insertNewTask:(ppatToDoItem *)task withSteps:(NSArray *)steps;
 -(BOOL)deleteStep:(ppatStep *)step;
+-(BOOL)deleteTask:(ppatToDoItem *)toBeDeleted;
 @end

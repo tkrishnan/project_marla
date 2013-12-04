@@ -178,4 +178,20 @@
     return YES;
 }
 
+-(BOOL)deleteTask:(ppatToDoItem *)toBeDeleted
+{
+    [toBeDeleted.stepSet enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        [self.managedObjectContext deleteObject:obj];
+    }];
+    [self.managedObjectContext deleteObject:toBeDeleted];
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end

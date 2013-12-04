@@ -124,6 +124,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"Deleted row.");
         // Delete the row from the data source
+        ppatToDoItem *tobeDeleted = [self.toDoItems objectAtIndex:[indexPath row]];
+        ppatAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+        [appDelegate deleteTask:tobeDeleted];
         [self.toDoItems removeObjectAtIndex:[indexPath row]];
         // Delete row using the cool literal version of [NSArray arrayWithObject:indexPath]
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

@@ -24,7 +24,17 @@
     ppatAddStepViewController *source = [segue sourceViewController];
     ppatStep *step = source.thisStep;
     if (step != nil) {
-        [self.currItem.stepsList addObject:step];
+        step.stepNumber = [NSNumber numberWithInteger:[currItem.stepsList count]];
+        NSMutableSet *tempSet = [NSMutableSet setWithSet:currItem.stepSet];
+        [tempSet addObject:step];
+        self.currItem.stepSet = [NSSet setWithSet:tempSet];
+        ppatAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+        NSError *error;
+        if (![appDelegate.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+        [currItem refreshStepsList];
         [self.stepsTable reloadData];
     }
 }
@@ -111,6 +121,7 @@
         [currItem refreshStepsList];
         // Delete row using the cool literal version of [NSArray arrayWithObject:indexPath]
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadData];
     }
     if ([tableView isEditing]){
         NSLog(@"ING");
