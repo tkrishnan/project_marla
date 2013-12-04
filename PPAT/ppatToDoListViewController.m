@@ -9,6 +9,7 @@
 #import "ppatToDoListViewController.h"
 #import "ppatAddToDoItemViewController.h"
 #import "ppatOptionViewController.h"
+#import "ppatViewTaskViewController.h"
 #import "ppatToDoItem.h"
 #import "ppatAppDelegate.h"
 
@@ -141,11 +142,11 @@
     NSLog(@"ToDolistView: prepareForSegue");
     if ([segue.identifier isEqualToString:@"selectSingleTask"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ppatOptionViewController *destViewController = segue.destinationViewController;
+        ppatViewTaskViewController *destViewController = segue.destinationViewController;
         ppatToDoItem *test = [self.toDoItems objectAtIndex:indexPath.row];
         NSLog(@"ToDolistView: prepareForSegue selected item %@", [[self.toDoItems objectAtIndex:indexPath.row] itemName]);
         NSLog(@"ToDolistView: prepareForSegue selected item %@", test.stepsList);
-        destViewController.taskName = [[self.toDoItems objectAtIndex:indexPath.row] itemName];
+        //destViewController.taskName = [[self.toDoItems objectAtIndex:indexPath.row] itemName];
         destViewController.currItem =[self.toDoItems objectAtIndex:indexPath.row];
     }
 }

@@ -9,6 +9,7 @@
 #import "ppatViewTaskViewController.h"
 #import "ppatToDoItem.h"
 #import "ppatStep.h"
+#import "ppatStepThroughTaskViewController.h"
 #import "ppatAddStepViewController.h"
 #import "ppatAppDelegate.h"
 
@@ -54,6 +55,8 @@
 	// Do any additional setup after loading the view.
     stepsTable.delegate = self;
     stepsTable.dataSource = self;
+    NSLog(@"blah");
+    NSLog(currItem.itemName);
     taskTitle.text = currItem.itemName;
     [taskTitle sizeThatFits:CGSizeMake(177, 55)];
 }
@@ -132,6 +135,15 @@
         
         [tableView setEditing:YES animated:YES];
         [tableView reloadData];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"stepThroughTask"]) {
+        NSLog(@"Option: prepareForSegue stepThroughTask");
+        ppatStepThroughTaskViewController *destViewController = segue.destinationViewController;
+        destViewController.currItem = currItem;
     }
 }
 
