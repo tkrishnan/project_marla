@@ -36,12 +36,23 @@ int count;
     UINavigationController *navCon  = (UINavigationController*) [self.navigationController.viewControllers objectAtIndex:2];
     navCon.navigationItem.title =currItem.itemName;
     NSString *step = @"Step ";
-    NSString *strFromInt = [NSString stringWithFormat:@"%d: ", count+1];
-    stepNumber.text = [step stringByAppendingString:strFromInt];
+    NSString *strFromInt = [NSString stringWithFormat:@"%d", count+1];
+    stepNumber.text = [[[step stringByAppendingString:strFromInt] stringByAppendingString:@" of "] stringByAppendingFormat:@"%d", [currItem.stepsList count]];
     ppatStep *temp = [currItem.stepsList objectAtIndex:count];
-    NSString *temp_string = temp.stepText;
+    NSMutableString *temp_string = [NSMutableString stringWithString:temp.stepText];
     NSLog(@"%@", temp_string);
-    stepText.text = temp_string; }
+    [temp_string appendString:@"?"];
+    [UIView animateWithDuration:1.5 animations:^{
+        stepText.alpha = 0.0;
+    }];
+    stepText.text = temp_string;
+    [UIView animateWithDuration:1.5 animations:^{
+        stepText.alpha = 1.0;
+    }];
+    [stepText sizeThatFits:CGSizeMake(280, 80)];[stepText sizeToFit];
+    previousStep.hidden = YES;
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -57,17 +68,27 @@ int count;
     NSString *temp_string = temp.stepText;
     NSLog(@"%@", temp_string);
     stepText.text = temp_string;
+    
 }
 
 - (IBAction)nextStep:(id)sender {
     if (count + 1 != [currItem.stepsList count]){
         count = count + 1;
         NSString *step = @"Step ";
-        NSString *strFromInt = [NSString stringWithFormat:@"%d: ", count+1];
-        stepNumber.text = [step stringByAppendingString:strFromInt];
+        NSString *strFromInt = [NSString stringWithFormat:@"%d", count+1];
+        stepNumber.text = [[[step stringByAppendingString:strFromInt] stringByAppendingString:@" of "] stringByAppendingFormat:@"%d", [currItem.stepsList count]];
         ppatStep *temp = [currItem.stepsList objectAtIndex:count];
-        NSString *temp_string = temp.stepText;
+        NSMutableString *temp_string = [NSMutableString stringWithString:temp.stepText];
+        NSLog(@"%@", temp_string);
+        [temp_string appendString:@"?"];
+        [UIView animateWithDuration:1.5 animations:^{
+            stepText.alpha = 0.0;
+        }];
         stepText.text = temp_string;
+        [UIView animateWithDuration:1.5 animations:^{
+            stepText.alpha = 1.0;
+        }];
+        [stepText sizeThatFits:CGSizeMake(280, 80)];
         if (previousStep.hidden){
             previousStep.hidden = NO;
         }
@@ -89,11 +110,21 @@ int count;
     if (count - 1  >= 0){
         count = count - 1;
         NSString *step = @"Step ";
-        NSString *strFromInt = [NSString stringWithFormat:@"%d: ", count+1];
-        stepNumber.text = [step stringByAppendingString:strFromInt];
+        NSString *strFromInt = [NSString stringWithFormat:@"%d", count+1];
+        stepNumber.text = [[[step stringByAppendingString:strFromInt] stringByAppendingString:@" of "] stringByAppendingFormat:@"%d", [currItem.stepsList count]];
         ppatStep *temp = [currItem.stepsList objectAtIndex:count];
-        NSString *temp_string = temp.stepText;
+        NSMutableString *temp_string = [NSMutableString stringWithString:temp.stepText];
+        NSLog(@"%@", temp_string);
+        [temp_string appendString:@"?"];
+        [UIView animateWithDuration:1.5 animations:^{
+            stepText.alpha = 0.0;
+        }];
         stepText.text = temp_string;
+        [UIView animateWithDuration:1.5 animations:^{
+            stepText.alpha = 1.0;
+        }];
+
+        [stepText sizeThatFits:CGSizeMake(280, 80)];
         if (count ==0){
             previousStep.hidden = YES;
         }

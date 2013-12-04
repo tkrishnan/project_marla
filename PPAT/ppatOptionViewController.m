@@ -32,7 +32,9 @@
 {
     NSLog(@"OptionViewController: viewDidLoad");
     [super viewDidLoad];
-    taskTitle.text = taskName;
+    UINavigationController *navCon  = (UINavigationController*) [self.navigationController.viewControllers objectAtIndex:1];
+    navCon.navigationItem.title =taskName;
+    //taskTitle.text = taskName;
 }
 
 - (void)didReceiveMemoryWarning

@@ -45,6 +45,7 @@
     stepsTable.delegate = self;
     stepsTable.dataSource = self;
     taskTitle.text = currItem.itemName;
+    [taskTitle sizeThatFits:CGSizeMake(177, 55)];
 }
 
 - (void)didReceiveMemoryWarning

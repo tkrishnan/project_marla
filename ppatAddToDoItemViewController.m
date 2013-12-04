@@ -23,6 +23,7 @@
     ppatAddStepViewController *source = [segue sourceViewController];
     ppatStep *step = source.thisStep;
     if (step != nil) {
+        step.stepNumber = [NSNumber numberWithInteger:[self.taskStepsArray count]];
         [self.taskStepsArray addObject:step];
         [self.stepsTableView reloadData];
 

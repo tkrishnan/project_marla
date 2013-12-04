@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6756FD5F184F2B9B00A5E707 /* ppatHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6756FD5E184F2B9B00A5E707 /* ppatHomeViewController.m */; };
 		72661BDC184AE82B00CE1AA7 /* ppatAddStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */; };
 		72661BDF184AEDAE00CE1AA7 /* ppatStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 72661BDE184AEDAE00CE1AA7 /* ppatStep.m */; };
 		72902D4E184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72902D4D184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6756FD5D184F2B9B00A5E707 /* ppatHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatHomeViewController.h; sourceTree = SOURCE_ROOT; };
+		6756FD5E184F2B9B00A5E707 /* ppatHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ppatHomeViewController.m; sourceTree = SOURCE_ROOT; };
 		72661BDA184AE82B00CE1AA7 /* ppatAddStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ppatAddStepViewController.h; path = PPAT/ppatAddStepViewController.h; sourceTree = "<group>"; };
 		72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ppatAddStepViewController.m; path = PPAT/ppatAddStepViewController.m; sourceTree = "<group>"; };
 		72661BDD184AEDAE00CE1AA7 /* ppatStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppatStep.h; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 		72B68C891831295500F6C0C4 = {
 			isa = PBXGroup;
 			children = (
+				6756FD5D184F2B9B00A5E707 /* ppatHomeViewController.h */,
+				6756FD5E184F2B9B00A5E707 /* ppatHomeViewController.m */,
 				72661BDB184AE82B00CE1AA7 /* ppatAddStepViewController.m */,
 				72CC93FD184B18750055F3F7 /* ppatOptionViewController.m */,
 				72902D4C184BE2E400EF58B4 /* ppatStepThroughTaskViewController.h */,
@@ -291,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6756FD5F184F2B9B00A5E707 /* ppatHomeViewController.m in Sources */,
 				72902D4E184BE2E400EF58B4 /* ppatStepThroughTaskViewController.m in Sources */,
 				F3A67D8C184C3993006E86D6 /* todoModel.xcdatamodeld in Sources */,
 				72B68CA21831295500F6C0C4 /* main.m in Sources */,
